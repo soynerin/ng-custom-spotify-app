@@ -8,11 +8,11 @@ import { SpotifyService } from 'src/app/services/spotify.service';
 })
 export class HomeComponent implements OnInit {
 
-  newReleases: any[];
+  newReleases: any[] = [];
 
   constructor( private spotifyService: SpotifyService ) {
     this.spotifyService.getNewReleases()
-      .subscribe( (data: any[]) => {
+      .subscribe( (data: any) => {
         console.log(data.albums.items);
         this.newReleases = data.albums.items;
       });
