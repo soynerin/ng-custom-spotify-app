@@ -1,1 +1,31 @@
-<p>artist works!</p>
+<app-loading *ngIf="isLoading"></app-loading>
+
+<div class="slide-container" *ngIf="!isLoading">
+  
+    <div class="wrapper">
+      <div class="clash-card barbarian">
+        <div class="clash-card__image clash-card__image--barbarian">
+          <img [src]="artist.images[0].url" [alt]="artist.name" />
+        </div>
+        <div class="clash-card__level clash-card__level--barbarian">Level 4</div>
+        <div class="clash-card__unit-name"><a [href]="artist.external_urls.spotify" target="_blank">{{ artist.name }}</a></div>
+        <div class="clash-card__unit-description">
+          <span class="badge badge-dark" *ngFor="let genre of artist.genres">{{genre}}</span>
+        </div>
+  
+        <div class="clash-card__unit-stats clash-card__unit-stats--barbarian clearfix">
+          <div class="one-third">
+            <div class="stat">{{ artist.popularity }}</div>
+            <div class="stat-value">Popularity</div>
+          </div>
+  
+          <div class="one-third">
+            <div class="stat">{{ artist.followers.total }}</div>
+            <div class="stat-value">followers</div>
+          </div>  
+        </div>
+  
+      </div> <!-- end clash-card barbarian-->
+    </div> <!-- end wrapper -->
+    
+  </div> <!-- end container -->
