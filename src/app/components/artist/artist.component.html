@@ -1,52 +1,55 @@
 <app-loading *ngIf="isLoading"></app-loading>
 
 <div class="row" *ngIf="!isLoading">
-  
-    <div class="slide-container wrapper col-sm-6">
-      <div class="clash-card barbarian">
-        <div class="clash-card__image clash-card__image--barbarian">
-          <img [src]="artist.images[0].url" [alt]="artist.name" />
-        </div>
-        <div class="clash-card__level clash-card__level--barbarian">Level 4</div>
-        <div class="clash-card__unit-name"><a [href]="artist.external_urls.spotify" target="_blank">{{ artist.name }}</a></div>
-        <div class="clash-card__unit-description">
-          <span class="badge badge-dark" *ngFor="let genre of artist.genres">{{genre}}</span>
-        </div>
-  
-        <div class="clash-card__unit-stats clash-card__unit-stats--barbarian clearfix">
-          <div class="one-third">
-            <div class="stat">{{ artist.popularity }}</div>
-            <div class="stat-value">Popularity</div>
-          </div>
-  
-          <div class="one-third">
-            <div class="stat">{{ artist.followers.total }}</div>
-            <div class="stat-value">followers</div>
-          </div>  
-        </div>
-  
-      </div> <!-- end clash-card barbarian-->
-    </div> <!-- end wrapper -->
 
-    <div class="wrapper col-sm-6">
-      <table class="table table-dark">
-        <thead>
-          <tr>
-            <th scope="col">Foto</th>
-            <th scope="col">Album</th>
-            <th scope="col">Canción</th>
-            <th scope="col">Vista Previa</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let topTrack of topTracks">
-            <td scope="row"><img [src]="topTrack.album.images | noimage" class="img-thumb" alt="topTrack.name"></td>
-            <th>{{topTrack.album.name}}</th>
-            <td>{{topTrack.name}}</td>
-            <td><audio [src]="topTrack.preview_url" controls></audio></td>
-          </tr>
-        </tbody>
-      </table>       
+    <div class="slide-container wrapper col-sm-4">
+        <div class="clash-card barbarian">
+            <div class="clash-card__image clash-card__image--barbarian">
+                <img [src]="artist.images[0].url" [alt]="artist.name" />
+            </div>
+            <div class="clash-card__level clash-card__level--barbarian">Level 4</div>
+            <div class="clash-card__unit-name"><a [href]="artist.external_urls.spotify" target="_blank">{{ artist.name }}</a></div>
+            <div class="clash-card__unit-description">
+                <span class="badge badge-dark" *ngFor="let genre of artist.genres">{{genre}}</span>
+            </div>
+
+            <div class="clash-card__unit-stats clash-card__unit-stats--barbarian clearfix">
+                <div class="one-third">
+                    <div class="stat">{{ artist.popularity }}</div>
+                    <div class="stat-value">Popularity</div>
+                </div>
+
+                <div class="one-third">
+                    <div class="stat">{{ artist.followers.total }}</div>
+                    <div class="stat-value">followers</div>
+                </div>
+            </div>
+
+        </div>
+        <!-- end clash-card barbarian-->
     </div>
-    
-  </div> <!-- end container -->  
+    <!-- end wrapper -->
+
+    <div class="wrapper col-sm-8">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Foto</th>
+                    <th scope="col">Album</th>
+                    <th scope="col">Canción</th>
+                    <th scope="col">Vista Previa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let topTrack of topTracks">
+                    <td scope="row"><img [src]="topTrack.album.images | noimage" class="img-thumb" alt="topTrack.name"></td>
+                    <th>{{topTrack.album.name}}</th>
+                    <td>{{topTrack.name}}</td>
+                    <td><audio [src]="topTrack.preview_url" controls></audio></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+<!-- end container -->
