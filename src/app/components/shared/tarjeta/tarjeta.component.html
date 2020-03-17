@@ -1,5 +1,5 @@
 <div class="card-columns">
-    <div class="card" *ngFor="let elemento of elementos">
+    <div class="card" *ngFor="let elemento of elementos" (click)="verArtista(elemento)">
       <img [src]="elemento.images | noimage" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">{{ elemento.name }}</h5>
