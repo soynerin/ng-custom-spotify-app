@@ -45,7 +45,10 @@
                     <td scope="row"><img [src]="topTrack.album.images | noimage" class="img-thumb" alt="topTrack.name"></td>
                     <th>{{topTrack.album.name}}</th>
                     <td>{{topTrack.name}}</td>
-                    <td><audio [src]="topTrack.preview_url" controls></audio></td>
+                    <td>
+                      <!-- <audio [src]="topTrack.preview_url" controls></audio> -->
+                      <iframe [src]=" topTrack.uri | domseguro: 'https://open.spotify.com/embed?uri='" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    </td>
                 </tr>
             </tbody>
         </table>
