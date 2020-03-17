@@ -10,7 +10,9 @@
     </div>
 </div>
 
-<div class="card-columns">
+<app-tarjeta [elementos]="artists"></app-tarjeta>
+
+<!-- <div class="card-columns">
     <div class="card" *ngFor="let artist of artists">
       <img [src]="artist.images | noimage" class="card-img-top" alt="...">
       <div class="card-body">
@@ -18,4 +20,4 @@
         <p class="card-text"><span *ngFor="let genre of artist.genres" class="badge badge-pill badge-info">{{ genre }}</span></p>
       </div>
     </div>
-</div>
+</div> -->
